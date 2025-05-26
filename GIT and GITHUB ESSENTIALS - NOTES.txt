@@ -1,0 +1,198 @@
+**GIT and GITHUB ESSENTIALS - NOTES**
+
+---
+
+### 👉 Exercise 1: Introduction to Git and GitHub
+
+**1. What is Git?**
+
+* Git is a distributed version control system.
+* Used to track code changes and enable collaboration.
+* Helps manage source code efficiently in modern development.
+
+**2. Key Features of Git:**
+
+* Distributed architecture (local repos).
+* Fast performance and branching.
+* Data integrity using SHA-1.
+* Staging area for selective commits.
+
+**3. Git Workflow:**
+
+* Modify files → `git add` → `git commit` → `git push` → Team does `git pull`.
+* Helps in collaboration and tracking code changes.
+
+**4. Setting up Git (Git Bash):**
+
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "youremail@example.com"
+git config --global core.editor nano  # Optional
+git config --list  # To verify
+```
+
+---
+
+### 👉 Exercise 2: Basic Git Commands and Collaboration Tools
+
+**5. Basic Git Commands:**
+
+* `git init`: Initialize a repo
+* `git clone <url>`: Clone remote repo
+* `git add <file>`: Stage changes
+* `git commit -m "msg"`: Commit changes
+* `git status`: Show status of files
+
+**6. GitHub vs GitLab vs Bitbucket:**
+
+| Platform  | Features                          | Use Case             |
+| --------- | --------------------------------- | -------------------- |
+| GitHub    | Largest community, GitHub Actions | Open-source projects |
+| GitLab    | DevOps, CI/CD built-in            | Enterprises          |
+| Bitbucket | Atlassian tools, Jira             | Agile development    |
+
+**7. Git + GitHub Usage:**
+
+* Git manages local code
+* GitHub hosts code online
+* Push/pull code between local and remote
+
+---
+
+### 👉 Exercise 3: Remote Git Repositories
+
+**8. What is a Remote Repository?**
+
+* Hosted version of repo on GitHub or other services
+* Shareable among team members
+
+**Creating a Remote Repo on GitHub:**
+
+* Create on GitHub → Copy URL
+* Add remote in Git:
+
+```bash
+git remote add origin <url>
+```
+
+**9. Committing to Remote Repo:**
+
+```bash
+git add .
+git commit -m "Initial commit"
+git push -u origin main
+```
+
+**10. Cloning vs Initializing:**
+
+* `git clone`: Copy existing remote repo
+* `git init`: Start a new local repo from scratch
+
+---
+
+### 👉 Exercise 4: Git Commit History and Collaboration
+
+**11. Viewing Commit History:**
+
+```bash
+git log
+git log --oneline --graph
+```
+
+**12. Adding Collaborators (GitHub):**
+
+* Go to repo settings → Manage Access → Invite collaborator
+* They accept via GitHub/email
+
+**13. Importance of Comments on GitHub:**
+
+* Improve code quality
+* Clarify code logic
+* Facilitate discussions and reviews
+
+**14. `git pull` command:**
+
+* Combines fetch + merge
+
+```bash
+git pull origin main
+```
+
+* Updates your local repo with changes from remote
+
+---
+
+### 👉 Exercise 5: Git Branch Basics
+
+**15. What is a Branch?**
+
+* A separate line of development
+* Enables parallel work (e.g., features, bug fixes)
+
+**16. Creating, Switching, and Merging Branches:**
+
+```bash
+git branch feature
+git checkout feature
+git checkout main
+git merge feature
+```
+
+**17. `git revert` Usage:**
+
+* Reverts a specific commit safely
+
+```bash
+git revert <commit-hash>
+```
+
+* Does not delete history; creates a new commit
+
+---
+
+### 👉 Exercise 6: Git Branching Model
+
+**18. GitFlow Model:**
+
+* `main`: Production-ready code
+* `develop`: Integrates all features
+* `feature/*`: Feature-specific branches
+* `release/*`: Pre-release version
+* `hotfix/*`: Urgent bug fixes
+* Organizes development in large teams
+
+---
+
+### 👉 Exercise 7: Advanced Git Concepts
+
+**19. Git Rebase vs Merge:**
+
+* `merge`: Preserves history with merge commits
+* `rebase`: Rewrites history, creates linear history
+
+```bash
+git checkout feature
+git rebase main
+```
+
+**20. Git Stashing, Hooks, and Bisect:**
+
+* `git stash`: Temporarily saves changes
+
+```bash
+git stash
+git stash pop
+```
+
+* **Git Hooks**: Scripts triggered by Git actions (e.g., pre-commit)
+* `git bisect`: Finds bug-causing commit via binary search
+
+```bash
+git bisect start
+git bisect bad
+git bisect good <commit-hash>
+```
+
+---
+
+**End of Notes**
